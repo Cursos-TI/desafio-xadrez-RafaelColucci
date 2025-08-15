@@ -5,28 +5,55 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    //declaração de variáveis.
+    char menu;
+    int i = 0; 
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    printf("*** XADREZ *** \n\n");
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    printf("T. Torre\n");
+    printf("B. Bispo\n");
+    printf("R. Rainha\n\n");
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    printf("Escolha a peça para mover: "); //menu para o jogador escolher qual peça mover.
+    scanf("%c", &menu);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    switch(menu)
+    {
+        case 'T':
+        case 't':
+            printf("Você escolheu a Torre: \n");
+            for(i = 0; i < 5; i++) //utilização do for para mover 5 casas para direita.
+            {
+                printf("direita\n");  // saida na tela
+            }
+            break;
+        case 'B':
+        case 'b':
+            printf("Você escolheu o Bispo: \n");
+            while(i < 5) //utilização do while para mover 5 casas na diagonal direita.
+            {
+                printf("Cima - Direita\n"); // saida na tela
+                i++; //incremento
+            }
+            break;
+        case 'R':
+        case 'r':
+            printf("Você escolheu a Rainha: \n"); // utilização do dowhile para mover 8 casas para esquerda.
+            do
+            {
+                printf("Esquerda\n"); // saida na tela
+                i++; //incremento
+            } while (i < 8);
+            break;
+        default:
+            printf("Opção Inválida!\n"); // saida na tela
+            break;            
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
 
+    }
+
+    
     return 0;
 }
